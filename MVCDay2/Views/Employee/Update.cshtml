@@ -1,0 +1,31 @@
+﻿@using MVCDay2.DAL.Entities
+@model Employee
+
+@if (ViewBag.errormsg != null)
+{
+        <div class="alert alert-primary" role="alert">
+        @ViewBag.errormsg
+        </div>
+}
+else
+{
+        <div class="card">
+            <h5 class="card-header">Edit Employee</h5>
+            <div class="card-body">
+                <form asp-action="Update" asp-controller="Employee">
+                    <!-- Name -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" asp-for="name" class="form-control" id="name">
+                    </div>
+                    <!-- Age -->
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Age</label>
+                        <input type="text" asp-for="age" class="form-control" id="age">
+                    </div>
+                    <!-- Button -->
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+}
